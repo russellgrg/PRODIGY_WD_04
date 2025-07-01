@@ -1,0 +1,281 @@
+/* ===============================
+   VARIABLES
+================================ */
+:root {
+  --primary: #ffc107;
+  --secondary: #000;
+  --text-light: #f8f9fa;
+  --text-dark: #212529;
+}
+
+/* ===============================
+   GLOBAL RESET & BASE
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--secondary);
+  color: var(--text-light);
+  overflow-x: hidden;
+}
+
+/* ===============================
+   NAVBAR
+================================ */
+.navbar {
+  transition: all 0.3s ease;
+  background-color: var(--primary) !important;
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.navbar.scrolled .navbar-brand,
+.navbar.scrolled .nav-link {
+  color: var(--primary) !important;
+}
+
+.navbar.scrolled .nav-link:hover {
+  color: #fff !important;
+}
+
+.no-border {
+  border: none !important;
+}
+
+/* ===============================
+   HERO SECTION
+================================ */
+.hero-section {
+  min-height: 100vh;
+  padding-top: 80px;
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===============================
+   SECTION GENERAL
+================================ */
+section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 3rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* ===============================
+   PROJECT CARDS
+================================ */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(255, 193, 7, 0.2);
+}
+
+.project-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+/* ===============================
+   SKILL BADGES
+================================ */
+.skill-badge {
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+}
+
+.skill-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+}
+
+/* ===============================
+   CONTACT SECTION
+================================ */
+.contact-icon {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+#contact a.text-warning:hover {
+  color: #ffffff !important;
+  text-decoration: underline; 
+}
+
+/* ===============================
+   SOCIAL ICONS
+================================ */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 1rem;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 193, 7, 0.1);
+  color: var(--primary);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: var(--primary);
+  color: var(--text-dark);
+  transform: translateY(-5px);
+}
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+  border-top: 2px solid var(--primary);
+  padding: 1.5rem 0;
+}
+
+/* ===============================
+   WAVE ANIMATION (DOUBLE LAYER)
+================================ */
+.wave-outer {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg"><path fill="%23ffc107" d="M0,40 C360,80 1080,0 1440,40 L1440,0 L0,0 Z"></path></svg>') repeat-x;
+  background-size: 50% auto;
+}
+
+.wave1 {
+  top: 0;
+  animation: waveMove 6s linear infinite;
+  opacity: 1;
+  z-index: 2;
+}
+
+.wave2 {
+  top: 10px;
+  animation: waveMove 8s linear infinite reverse;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+@keyframes waveMove {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-25%); }
+}
+
+/* ===============================
+   BUTTON HOVER (Dark Buttons)
+================================ */
+.btn-dark:hover {
+  background-color: #333;
+  color: #ffd700;
+  border: 1px solid #000;
+}
+
+/* ===============================
+   GLOW EFFECT
+================================ */
+.glow {
+  text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+
+/* ===============================
+   FLOATING ANIMATION
+================================ */
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ===============================
+   UTILITY / FIXES
+================================ */
+.content-container {
+  position: relative;
+  z-index: 5;
+}
+
+.wave-fix {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .wave-container {
+    height: 120px;
+  }
+
+  section {
+    padding: 3rem 0;
+  }
+
+  .display-4 {
+    font-size: 2.5rem;
+  }
+}
